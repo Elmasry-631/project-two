@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	Elmasry
+{% endblock %}
+{% block header %}
+	<div class="container ">
+		<ol class="breadcrumb my-4 p-2" style='background-color: #adacac'>
+			<li class="breadcrumb-item">
+				<a class="text-primary text-decoration-none" href="{% url 'homepage' %}">Home</a>
+			</li>
+			<li class="breadcrumb-item">{{ board_list.board_name }}</li>
+		</ol>
+	</div>
+{% endblock %}
+{% block table %}
+<div class="container">
+        <a href="{% url  'new_post' post_id%}" class="btn btn-danger">New Post</a>
+		<table class="table table-hover table-responsive">
+			<thead>
+				<tr>
+					<th>Post Name</th>
+					<th>Desciption</th>
+					<th>Created by</th>
+					<th>Created in</th>
+				</tr>
+			</thead>
+			<tbody>
+                {% for post in post_list%}
+				<tr>
+                    <td>{{post.post_name}}</td>
+                    <td>{{post.post_description}}</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                {% endfor %}
+			</tbody>
+		</table>
+
+	</div>
+
+
+{% endblock %}

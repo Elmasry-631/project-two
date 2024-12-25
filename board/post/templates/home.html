@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	Elmasry
+{% endblock %}
+{% block header %}
+	<div class="container ">
+		<ol class="breadcrumb my-4">
+			<li class="breadcrumb-item">
+				Home
+			</li>
+		</ol>
+	</div>
+{% endblock %}
+{% block table %}
+	<div class="container">
+		<table class="table table-hover table-responsive">
+			<thead>
+				<tr>
+					<th>Project Name</th>
+					<th>Desciption</th>
+					<th>Created in</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for board in home %}
+					<tr>
+						<td>
+							<a class='text-primary text-decoration-none' href="{% url 'boards' board.id %}">{{ board.board_name }}</a>
+						</td>
+						<td>{{ board.board_description }}</td>
+						<td>{{ board.created_at }}</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+
+	</div>
+
+
+{% endblock %}

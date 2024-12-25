@@ -1,0 +1,20 @@
+{% extends 'base.html'%}
+{% block title %}
+New post
+{% endblock %}
+{% block header %}
+	<div class="container ">
+		<ol class="breadcrumb my-4 p-2" style='background-color: #adacac'>
+			<li class="breadcrumb-item">
+				<a class="text-primary text-decoration-none" href="{% url 'homepage' %}">Home</a>
+			</li>
+			<li class="breadcrumb-item"><a class="text-primary text-decoration-none" href="{% url 'boards' post_id%}">{{ post_new.board_name }}</a></li>
+            <li class="breadcrumb-item">New post</li>
+		</ol>
+	</div>
+{% endblock %}
+{%block form%}
+
+
+
+{% endblock %}
